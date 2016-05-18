@@ -1,4 +1,4 @@
-package com.redis.conn;
+package com.redis.conn.entity;
 
 /**
  * 数据库实体
