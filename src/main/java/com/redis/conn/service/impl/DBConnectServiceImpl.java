@@ -1,5 +1,8 @@
 package com.redis.conn.service.impl;
 
+import java.util.List;
+import java.util.Map;
+
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +27,11 @@ public class DBConnectServiceImpl extends SqlSessionDaoSupport implements DBConn
 		DBConnectDao mapper = this.getSqlSession().getMapper(DBConnectDao.class);
 		System.out.println(mapper);
 		return 1;
+	}
+
+	@Override
+	public List<DBConnect> queryListByMap(Map<String, Object> paramsMap) {
+		return null;
 	}
 
 }
