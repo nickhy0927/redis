@@ -1,5 +1,12 @@
 package com.redis.commons.service;
 
-public class CommonService {
+import java.io.Serializable;
+import java.util.List;
+import java.util.Map;
 
+public interface CommonService<T, ID extends Serializable> {
+
+    public void insert(T t);
+
+    public List<T> queryListByMap(Map<String, Object> paramsMap);
 }
