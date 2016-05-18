@@ -14,6 +14,15 @@ public class DBConnect {
 	private String dbusername;
 	private String dbencoding;
 
+	public DBConnect(String dbname, String dbip, String dbpwd, String dbusername, String dbencoding) {
+		super();
+		this.dbname = dbname;
+		this.dbip = dbip;
+		this.dbpwd = dbpwd;
+		this.dbusername = dbusername;
+		this.dbencoding = dbencoding;
+	}
+
 	public Long getId() {
 		return id;
 	}
