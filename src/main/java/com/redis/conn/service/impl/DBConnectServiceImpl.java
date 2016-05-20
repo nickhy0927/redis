@@ -1,37 +1,31 @@
 package com.redis.conn.service.impl;
 
 import java.util.List;
-import java.util.Map;
 
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.mybatis.spring.support.SqlSessionDaoSupport;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.redis.commons.service.impl.CommonServiceImpl;
 import com.redis.conn.dao.DBConnectDao;
 import com.redis.conn.entity.DBConnect;
 import com.redis.conn.service.DBConnectService;
 
 @Service
-public class DBConnectServiceImpl extends SqlSessionDaoSupport implements DBConnectService {
-	/** 
-     * Autowired 必须要有 
-     */  
-    @Autowired  
-    public void setSqlSessionFactory(SqlSessionFactory sqlSessionFactory){  
-        super.setSqlSessionFactory(sqlSessionFactory);  
-    }  
-    
+public class DBConnectServiceImpl extends CommonServiceImpl<DBConnect, Long> implements DBConnectService {
+
 	@Override
-	public int insert(DBConnect connect) {
-		DBConnectDao mapper = this.getSqlSession().getMapper(DBConnectDao.class);
-		System.out.println(mapper);
-		return 1;
+	public List<DBConnect> queryList() {
+		List<DBConnect> list = this.getSqlSession().selectList("com.redis.conn.entity.DBConnect.selectRedis");
+		return list;
 	}
 
 	@Override
-	public List<DBConnect> queryListByMap(Map<String, Object> paramsMap) {
-		return null;
+	public List<DBConnect> queryList1() {
+		DBConnectDao connectDao = this.getSqlSession().getMapper(DBConnectDao.class);
+		List<DBConnect> queryList = connectDao.queryList();
+		return queryList;
 	}
+	
+	
 
+	
 }

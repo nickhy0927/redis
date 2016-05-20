@@ -1,4 +1,4 @@
-package com.redis.commons.service;
+package com.redis.commons.dao;
 
 import java.io.Serializable;
 import java.util.List;
@@ -9,4 +9,6 @@ public interface CommonDao<T, ID extends Serializable> {
     public void insert(T t);
 
     public List<T> queryListByMap(Map<String, Object> paramsMap);
+    
+    List<T> queryList();
 }

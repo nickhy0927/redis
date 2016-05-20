@@ -6,7 +6,13 @@ import java.util.Map;
 
 public interface CommonService<T, ID extends Serializable> {
 
-    public int insert(T t);
+	public List<T> queryListByMap(Map<String, Object> paramsMap);
 
-    public List<T> queryListByMap(Map<String, Object> paramsMap);
+	int insert(T t, Serializable type);
+
+	List<T> queryList(Serializable type);
+
+	T get(ID id, Serializable type);
+
+	void save(T t, Serializable type);
 }
