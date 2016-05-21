@@ -9,5 +9,7 @@
 			<!-- 定义消息资源文件的相对路径 -->
 			<value>messages/users</value>
 		</property>
+		<!-- 如果在国际化资源文件中找不到对应代码的信息，就用这个代码作为名称  -->               
+    <property name="useCodeAsDefaultMessage" value="true" />    
 	</bean>
 </beans>

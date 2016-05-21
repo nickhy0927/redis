@@ -20,21 +20,40 @@ public class MySpringTest {
 	@Test
 	public void test1() {
 		System.out.println("-------------------");
-		//DBConnect connect = new DBConnect("db0001", "localhost", "root", "root", "utf-8");
+		// DBConnect connect = new DBConnect("db0001", "localhost", "root",
+		// "root", "utf-8");
 		System.out.println(service.queryList());
 		System.out.println("-------------------");
 	}
+
 	@Test
-	public void test2() {
+	public void queryList1() {
 		System.out.println("-------------------");
 		System.out.println(service.queryList1());
 		System.out.println("-------------------");
 	}
-	
+
 	@Test
-	public void test3() {
+	public void queryList() {
 		System.out.println("-------------------");
 		System.out.println(service.queryList(DBConnectDao.class));
 		System.out.println("-------------------");
 	}
+
+	@Test
+	public void get() {
+		System.out.println("-------------------");
+		System.out.println(service.get(Long.valueOf(1),DBConnectDao.class));
+		System.out.println("-------------------");
+	}
+	
+	@Test
+	public void insert() {
+		System.out.println("----------插入数据---------");
+		DBConnect connect = new DBConnect("db006", "localhost", "root", "root", "GBK");
+		System.out.println(service.insert(connect,DBConnectDao.class));
+		System.out.println("-------------------");
+	}
+	
+	
 }

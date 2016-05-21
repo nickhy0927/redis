@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
@@ -16,7 +17,7 @@
 		<table style="width: 100%" cellpadding="0" cellspacing="0" border="1px solid #f2f2f2">
 			<tr>
 				<td>
-					<fmt:message key="platform.user.username"/>
+					${username}
 				</td>
 				<td>
 					<input name="username" id="username" />

@@ -11,4 +11,6 @@ public interface CommonDao<T, ID extends Serializable> {
     public List<T> queryListByMap(Map<String, Object> paramsMap);
     
     List<T> queryList();
+    
+    T get(ID id);
 }
