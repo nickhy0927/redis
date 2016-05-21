@@ -12,11 +12,6 @@
 	<title>Insert title here</title>
 </head>
 <body>
-	<datalist id="datalist-1">
-		<option value="Value1">Option1</option>
-		<option value="Value2">Option2</option>
-		<option value="Value3">Option3</option>
-	</datalist>
 	<form id="form-1">
 		<table style="width: 100%" cellpadding="0" cellspacing="0" border="1px solid #f2f2f2">
 			<tr>
@@ -50,40 +45,5 @@
 			</tr>
 		</table>
 	</form>
-	<ol data-role="listview" id="listview-1" data-inset="true">
-		<li><a href="item1.html">Item 1</a></li>
-		<li><a href="item2.html">Item 2</a></li>
-		<li><a href="item3.html">Item 3</a></li>
-	</ol>
-	<table id="table-1">
-		<caption>测试table</caption>
-		<thead>
-			<tr>
-				<th>A</th>
-				<th>B</th>
-				<th>C</th>
-				<th>D</th>
-				<th>E</th>
-				<th>F</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>a</td>
-				<td>b</td>
-				<td>c</td>
-				<td>d</td>
-				<td>e</td>
-				<td>f</td>
-			</tr>
-		</tbody>
-	</table>
-	<menu id="menu-1" label="My menu" type="toolbar">
-		<menuitem type="command" label="Item 0"/>
-		<menuitem type="command" label="Item 1"/>
-		<menuitem type="command" label="Item 2"/>
-		<menuitem type="command" label="Item 3"/>
-		<menuitem type="command" label="Item 4"/>
-	</menu>
 </body>
 </html>
