@@ -14,6 +14,8 @@ public class DBConnect {
 	private String dbusername;
 	private String dbencoding;
 
+	public DBConnect(){}
+	
 	public DBConnect(String dbname, String dbip, String dbpwd, String dbusername, String dbencoding) {
 		super();
 		this.dbname = dbname;
@@ -71,4 +73,9 @@ public class DBConnect {
 		this.dbencoding = dbencoding;
 	}
 
+	@Override
+	public String toString() {
+		return "DBConnect [id=" + id + ", dbname=" + dbname + ", dbip=" + dbip + ", dbpwd=" + dbpwd + ", dbusername="
+				+ dbusername + ", dbencoding=" + dbencoding + "]";
+	}
 }

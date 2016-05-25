@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,22 +13,17 @@
 	<title>Insert title here</title>
 </head>
 <body>
-	<datalist id="datalist-1">
-		<option value="Value1">Option1</option>
-		<option value="Value2">Option2</option>
-		<option value="Value3">Option3</option>
-	</datalist>
 	<form id="form-1">
 		<table style="width: 100%" cellpadding="0" cellspacing="0" border="1px solid #f2f2f2">
 			<tr>
 				<td>
-					<spring:message code="user.username"/>
+					${username}
 				</td>
 				<td>
 					<input name="username" id="username" />
 				</td>
 				<td>
-					<spring:message code="user.password"/>
+					<fmt:message key="platform.user.password"/>
 				</td>
 				<td>
 					<input type="password" name="password" id="password" />
@@ -34,13 +31,14 @@
 			</tr>
 			<tr>
 				<td>
-					<spring:message code="user.email"/>
+					<fmt:message key="platform.user.email"/>
 				</td>
 				<td>
 					<input name="email" id="email" />
 				</td>
 				<td>
-					<spring:message code="user.sex"/>
+					<fmt:requestEncoding value="UTF-8"/>
+					<fmt:message key="platform.user.sex"/>
 				</td>
 				<td>
 					<input type="text" name="sex" id="sex" />
@@ -48,40 +46,5 @@
 			</tr>
 		</table>
 	</form>
-	<ol data-role="listview" id="listview-1" data-inset="true">
-		<li><a href="item1.html">Item 1</a></li>
-		<li><a href="item2.html">Item 2</a></li>
-		<li><a href="item3.html">Item 3</a></li>
-	</ol>
-	<table id="table-1">
-		<caption>测试table</caption>
-		<thead>
-			<tr>
-				<th>A</th>
-				<th>B</th>
-				<th>C</th>
-				<th>D</th>
-				<th>E</th>
-				<th>F</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>a</td>
-				<td>b</td>
-				<td>c</td>
-				<td>d</td>
-				<td>e</td>
-				<td>f</td>
-			</tr>
-		</tbody>
-	</table>
-	<menu id="menu-1" label="My menu" type="toolbar">
-		<menuitem type="command" label="Item 0"/>
-		<menuitem type="command" label="Item 1"/>
-		<menuitem type="command" label="Item 2"/>
-		<menuitem type="command" label="Item 3"/>
-		<menuitem type="command" label="Item 4"/>
-	</menu>
 </body>
 </html>

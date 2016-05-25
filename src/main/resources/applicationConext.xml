@@ -14,7 +14,7 @@
 	<context:component-scan base-package="com.redis">
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
-	
+	<import resource="mail.xml"/>
 	<!-- 将多个配置文件位置放到列表中 -->
 	<bean id="propertyResources" class="java.util.ArrayList">
 		<constructor-arg>

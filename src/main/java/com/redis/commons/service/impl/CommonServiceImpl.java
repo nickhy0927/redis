@@ -12,28 +12,37 @@ import com.redis.commons.dao.CommonDao;
 import com.redis.commons.service.CommonService;
 
 @SuppressWarnings("unchecked")
-public class CommonServiceImpl<T,ID extends Serializable> extends SqlSessionDaoSupport implements CommonService<T, ID>{
-	/** 
-     * Autowired 必须要有 
-     */  
-    @Autowired  
-    public void setSqlSessionFactory(SqlSessionFactory sqlSessionFactory){  
-        super.setSqlSessionFactory(sqlSessionFactory);  
-    }
+public class CommonServiceImpl<T, ID extends Serializable> extends SqlSessionDaoSupport
+		implements CommonService<T, ID> {
+	/**
+	 * Autowired 必须要有
+	 */
+	@Autowired
+	public void setSqlSessionFactory(SqlSessionFactory sqlSessionFactory) {
+		super.setSqlSessionFactory(sqlSessionFactory);
+	}
 
+	/**
+	 * 根据条件查询
+	 */
 	@Override
-	public List<T> queryListByMap(Map<String, Object> paramsMap) {
+	public List<T> queryListByMap(Map<String, Object> paramsMap, Serializable type) {
 		return null;
 	}
 
+	/**
+	 * 插入数据
+	 */
 	@Override
-	public int insert(T t, Serializable type) {
+	public T insert(T t, Serializable type) {
 		CommonDao<T, ID> mapper = (CommonDao<T, ID>) this.getSqlSession().getMapper((Class<T>) type);
-		System.out.println(mapper);
 		mapper.insert(t);
-		return 0;
+		return t;
 	}
 
+	/**
+	 * 查询所以的数据
+	 */
 	@Override
 	public List<T> queryList(Serializable type) {
 		CommonDao<T, ID> mapper = (CommonDao<T, ID>) this.getSqlSession().getMapper((Class<T>) type);
@@ -41,15 +50,13 @@ public class CommonServiceImpl<T,ID extends Serializable> extends SqlSessionDaoS
 		return list;
 	}
 
+	/**
+	 * 根据ID查询一条数据
+	 */
 	@Override
 	public T get(ID id, Serializable type) {
-		return null;
+		CommonDao<T, ID> mapper = (CommonDao<T, ID>) this.getSqlSession().getMapper((Class<T>) type);
+		T t = mapper.get(id);
+		return t;
 	}
-
-	@Override
-	public void save(T t, Serializable type) {
-		
-	}
-
-	
 }
