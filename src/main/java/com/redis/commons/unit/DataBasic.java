@@ -1,4 +1,4 @@
-package com.redis.commons.unil;
+package com.redis.commons.unit;
 
 import javax.sql.DataSource;
 

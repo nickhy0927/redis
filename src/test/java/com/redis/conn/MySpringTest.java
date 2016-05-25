@@ -7,7 +7,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.redis.conn.dao.DBConnectDao;
-import com.redis.conn.entity.DBConnect;
 import com.redis.conn.service.DBConnectService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
